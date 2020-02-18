@@ -21,13 +21,13 @@ $series = traerSeries($db);
     <title>Series</title>
 </head>
 <body>
-    <h3>Series</h3>
+    <h3><a href="peliculas.php">Peliculas</a> | Series</h3>
     <ul>
         <?php foreach($series as $serie) : ?>
         
             <li><a href="serie.php?id=<?=$serie['id']?>"><?=$serie['title']?></a></li>
         <?php endforeach;?>
     </ul>
-    <a href="peliculas.php">Peliculas</a>
+    <a href="agregarPelicula.php">Agregar Pelicula</a>
 </body>
 </html>
