@@ -13,8 +13,9 @@ require 'conection.php';
 </head>
 <body>
 <ul>
-    <li><a href="/series.php">Series</a></li>
+    <li><a href="series.php">Series</a></li>
     <li>Pelis</li>
+    <li><a href="actores.php">Actores</a></li>
 </ul>
     
 </body>
