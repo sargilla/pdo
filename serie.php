@@ -12,7 +12,7 @@ function traerSerie(PDO $db, $id) {
 
 function traerEpisodios(PDO $db, $id) {
     $query = $db->prepare("SELECT  episodes.title as episode_title ,episodes.number as episode_number ,seasons.title as season_title ,seasons.number as season_number  FROM episodes
-        INNER JOIN seasons ON episodes.season_id = seasons.id and year(episodes.release_date) = 2013
+        INNER JOIN seasons ON episodes.season_id = seasons.id 
         INNER JOIN series ON series.id = seasons.serie_id AND series.id = :id ");
     $query->execute([
         'id'=> $id

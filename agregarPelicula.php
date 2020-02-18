@@ -1,3 +1,29 @@
+<?php 
+	function guardarPelicula($db,$datos){
+		// echo "<pre>";
+		// var_dump($datos); 
+
+		$query = $db->prepare("INSERT INTO movies ('title','rating','awards','release_date','length','genre_id') values (:title,:rating:,:awards,:release_date,:length,:genre_id)");
+		return $query->execute([
+			'title' => $datos["title"],
+			'rating' => $datos["rating"],
+			'awards' => $datos["awards"],
+			'release_date' => $datos["year"].'-'.$datos["month"].'-'.$datos["day"].' 00:00:00',
+			'length' => $datos["length"],
+			'genre_id' => isset($datos['genre_id']) ? $datos['genre_id'] : null 
+		]);
+	}
+
+	if($_POST){
+		require 'conection.php';
+		
+		$res = guardarPelicula($db,$_POST);
+		var_dump($res);
+		
+	}
+
+	
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,9 +32,8 @@
 	<title>Agregar Pelicula</title>
 	
 </head>
-
 <body>
-	<form method="post">
+	<form method="post" action="<?=$_SERVER['PHP_SELF']?>">
 		<div>
 			<label>Titulo</label>
 			<input type="text" name="title" >
@@ -23,7 +48,7 @@
 		</div>
 		<div>
 			<label>Duracion</label>
-			<input type="text" name="leght" >
+			<input type="text" name="length" >
 		</div>
 		<div>
 			<label>Fecha de Estreno</label> <br>
