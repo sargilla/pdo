@@ -21,7 +21,7 @@ $series = traerSeries($db);
     <title>Series</title>
 </head>
 <body>
-    <h3><a href="peliculas.php">Peliculas</a> | Series</h3>
+    <h3><a href="peliculas.php">Peliculas</a> | Series  | <a href="actores.php">Actores</a></h3>
     <ul>
         <?php foreach($series as $serie) : ?>
 

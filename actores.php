@@ -18,7 +18,7 @@ $actores = traerActores($db);
     <title>Actores</title>
 </head>
 <body>
-    <h3>Peliculas |  <a href="series.php">Series</a></h3>
+    <h3><a href="peliculas.php">Peliculas</a> | <a href="series.php">Series</a>   | Actores</h3>
     <ul>
         <?php foreach($actores as $actor) : ?>
             <li><?=$actor['first_name']?> <?=$actor['last_name']?></li>

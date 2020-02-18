@@ -21,7 +21,7 @@ $peliculas = traerMovies($db);
     <title>Peliculas</title>
 </head>
 <body>
-    <h3>Peliculas |  <a href="series.php">Series</a></h3>
+    <h3>Peliculas |  <a href="series.php">Series</a> | <a href="actores.php">Actores</a></h3>
     <?php if(isset($_GET['exito'])) : ?>
     <h4 style="color:red;"><strong>Se guardó la película</strong></h4>
     <?php endif; ?>
