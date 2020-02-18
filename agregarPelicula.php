@@ -4,6 +4,7 @@
 
 	function guardarPelicula($db,$datos){
 		$query = $db->prepare("INSERT INTO movies (title,rating,awards,release_date,length,genre_id) values (:title,:rating,:awards,:release_date,:length,:genre_id)");
+		// var_dump($datos); exit;
 		$res = $query->execute([
 			'title' => $datos["title"],
 			'rating' => $datos["rating"],
@@ -67,7 +68,8 @@
 		</div>
 		<div>
 			<label>Género</label>
-			<select name="genero">
+			<select name="genre_id">
+			<option value="">Elegir género</option>
 				<?php foreach($generos as $genero): ?>
 					<option value="<?php echo $genero['id'];?>"><?php echo $genero['name'];?></option>
 				<?php endforeach;?>
