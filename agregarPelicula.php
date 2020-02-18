@@ -69,7 +69,7 @@
 			<label>Género</label>
 			<select name="genero">
 				<?php foreach($generos as $genero): ?>
-					<option value="<?php echo $genero['name'];?>"><?php echo $genero['name'];?></option>
+					<option value="<?php echo $genero['id'];?>"><?php echo $genero['name'];?></option>
 				<?php endforeach;?>
 			</select>
 		</div>
