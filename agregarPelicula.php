@@ -1,3 +1,16 @@
+<?php
+
+require 'conection.php';
+
+function traerGeneros(PDO $db) {
+	$query = $db->prepare("SELECT * FROM genres");
+	 $query->execute();
+	 return $query->fetchAll(PDO::FETCH_ASSOC);
+   }
+
+   $generos = traerGeneros($db);
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +25,14 @@
 		<div>
 			<label>Titulo</label>
 			<input type="text" name="title" >
+		</div>
+		<div>
+			<label>Género</label>
+			<select name="genero">
+				<?php foreach($generos as $genero): ?>
+					<option value="<?php echo $genero['name'];?>"><?php echo $genero['name'];?></option>
+				<?php endforeach;?>
+			</select>
 		</div>
 		<div>
 			<label>Rating</label>
