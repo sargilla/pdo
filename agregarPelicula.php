@@ -13,6 +13,13 @@
 		return $res ? $res : $query->errorInfo();
 		
 	}
+	function traerGeneros(PDO $db) {
+		$query = $db->prepare("SELECT * FROM genres");
+		$query->execute();
+		return $query->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+   $generos = traerGeneros($db);
 	if($_POST){
 		require 'conection.php';
 		$errores = [];
@@ -31,6 +38,10 @@
 			};
 		}
 	}
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,6 +59,14 @@
 			<?php if(isset($errores['title'])) : ?>
 				<span><?=$errores['title'] ?></span>
 			<?php endif; ?>
+		</div>
+		<div>
+			<label>Género</label>
+			<select name="genero">
+				<?php foreach($generos as $genero): ?>
+					<option value="<?php echo $genero['name'];?>"><?php echo $genero['name'];?></option>
+				<?php endforeach;?>
+			</select>
 		</div>
 		<div>
 			<label>Rating</label>
