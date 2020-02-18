@@ -14,7 +14,7 @@ require 'conection.php';
 <body>
 <ul>
     <li><a href="/series.php">Series</a></li>
-    <li>Pelis</li>
+    <li><a href="/peliculas.php">Pelis</a></li>
 </ul>
     
 </body>

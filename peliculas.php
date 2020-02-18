@@ -22,6 +22,9 @@ $peliculas = traerMovies($db);
 </head>
 <body>
     <h3>Peliculas |  <a href="series.php">Series</a></h3>
+    <?php if(isset($_GET['exito'])) : ?>
+    <h4 style="color:red;"><strong>Se guardó la película</strong></h4>
+    <?php endif; ?>
     <ul>
         <?php foreach($peliculas as $pelicula) : ?>
         
