@@ -1,4 +1,7 @@
 <?php 
+
+	require 'conection.php';
+
 	function guardarPelicula($db,$datos){
 		$query = $db->prepare("INSERT INTO movies (title,rating,awards,release_date,length,genre_id) values (:title,:rating,:awards,:release_date,:length,:genre_id)");
 		$res = $query->execute([
@@ -13,15 +16,17 @@
 		return $res ? $res : $query->errorInfo();
 		
 	}
+
 	function traerGeneros(PDO $db) {
 		$query = $db->prepare("SELECT * FROM genres");
 		$query->execute();
 		return $query->fetchAll(PDO::FETCH_ASSOC);
 	}
 
-   $generos = traerGeneros($db);
+   	$generos = traerGeneros($db);
+
 	if($_POST){
-		require 'conection.php';
+		
 		$errores = [];
 		$datos = $_POST;
 		if(!$datos['title']){
