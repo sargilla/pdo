@@ -26,11 +26,9 @@ $series = traerSeries($db);
         <?php include 'menu.php'; ?>
         <ul>
             <?php foreach($series as $serie) : ?>
-    
                 <li><a href="serie.php?id=<?=$serie['id']?>"><?=$serie['title']?></a></li>
             <?php endforeach;?>
         </ul>
-    </div>
-    
+    </div>    
 </body>
 </html>
