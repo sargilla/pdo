@@ -1,0 +1,66 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+html,body,.center {
+    height:100vh;
+    font-family: 'Nunito', sans-serif;
+    background-color: #fafafa;
+}
+
+ul {
+    list-style: none;
+}
+
+a,a:link, a:visited{
+    text-decoration: none;
+    color: #999;
+}
+
+a:hover{
+    color: #333;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.center  {    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.menu {
+    display: flex;
+    min-width: 300px;
+    max-width: 500px;
+    margin: 20px auto;
+    justify-content: space-between;
+   
+}
+.menu a {
+    
+    font-weight: bold;
+    color: #333;
+}
+
+.buscador input {
+    min-width: 600px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.25rem;
+     border: 1px solid #333;
+}
+
+.buscador button {
+    color: #333;
+   padding: 10px;
+    border: 1px solid #999;
+   border-radius: 5px;
+    border-color: #333;
+     font-size: 1.25rem;
+    margin-left: .5rem;
+}

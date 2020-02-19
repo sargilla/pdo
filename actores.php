@@ -16,13 +16,16 @@ $actores = traerActores($db);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actores</title>
+    <?php include 'header.php'; ?>
 </head>
 <body>
-    <h3><a href="peliculas.php">Peliculas</a> | <a href="series.php">Series</a>   | Actores</h3>
-    <ul>
-        <?php foreach($actores as $actor) : ?>
-            <li><?=$actor['first_name']?> <?=$actor['last_name']?></li>
-        <?php endforeach;?>
-    </ul>
+    <div class="container">
+        <?php include 'menu.php'; ?>
+        <ul>
+            <?php foreach($actores as $actor) : ?>
+                <li><?=$actor['first_name']?> <?=$actor['last_name']?></li>
+            <?php endforeach;?>
+        </ul>
+    </div>
 </body>
 </html>

@@ -19,15 +19,18 @@ $series = traerSeries($db);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Series</title>
+    <?php include 'header.php'; ?>
 </head>
 <body>
-    <h3><a href="peliculas.php">Peliculas</a> | Series  | <a href="actores.php">Actores</a></h3>
-    <ul>
-        <?php foreach($series as $serie) : ?>
-
-            <li><a href="serie.php?id=<?=$serie['id']?>"><?=$serie['title']?></a></li>
-        <?php endforeach;?>
-    </ul>
+    <div class="container">
+        <?php include 'menu.php'; ?>
+        <ul>
+            <?php foreach($series as $serie) : ?>
+    
+                <li><a href="serie.php?id=<?=$serie['id']?>"><?=$serie['title']?></a></li>
+            <?php endforeach;?>
+        </ul>
+    </div>
     
 </body>
 </html>
