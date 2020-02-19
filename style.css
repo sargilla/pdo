@@ -22,6 +22,7 @@ a:hover{
     color: #333;
 }
 
+
 .container {
     max-width: 1140px;
     margin: 0 auto;
@@ -29,20 +30,22 @@ a:hover{
 
 .center  {    
     display: flex;
-    align-items: center;
-    justify-content: center;
+     align-items: center;
+    
     flex-direction: column;
 }
+.medio {   
+    justify-content: center;
+}
+
 .menu {
     display: flex;
     min-width: 300px;
     max-width: 500px;
     margin: 20px auto;
     justify-content: space-between;
-   
 }
 .menu a {
-    
     font-weight: bold;
     color: #333;
 }
@@ -52,7 +55,7 @@ a:hover{
     padding: 10px;
     border-radius: 5px;
     font-size: 1.25rem;
-     border: 1px solid #333;
+    border: 1px solid #333;
 }
 
 .buscador button {
@@ -63,4 +66,18 @@ a:hover{
     border-color: #333;
      font-size: 1.25rem;
     margin-left: .5rem;
+}
+.tipo{
+    text-align:center;
+}
+
+.tipo input{ 
+    margin-left: .7rem;
+}
+.resultados > h3{
+    text-align: center;
+}
+
+.resultados > h3, .resultados .items{
+    margin-bottom:1.5rem;
 }
